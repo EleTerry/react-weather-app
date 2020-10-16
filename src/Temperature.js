@@ -7,7 +7,7 @@ export default function Temperature(props) {
     <div className="Temperature">
       <div className="row">
         <div className="col-2">
-          <img src="#" id="description-icon" />{" "}
+          <img src="#" id="description-icon" alt="Temp-icon" />{" "}
         </div>
         <div className="col-5">
           <span className="now-temp"> 14 </span>

@@ -14,6 +14,9 @@ function App() {
       <Temperature />
       <Forecast />
       <Form />
+      <footer>
+        <a href="https://github.com/EleTerry/react-weather-app" target="_blank">Open source</a> by Elena Terraneo
+      </footer>
     </div>
   );
 }
