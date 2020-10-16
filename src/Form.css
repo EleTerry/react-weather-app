@@ -1,0 +1,20 @@
+h6 {
+  margin: 0;
+  text-align: center;
+}
+
+button {
+  background: #0779e4;
+  border: 1px solid;
+  color: #fff;
+  padding: 6px 12px;
+}
+button:hover {
+  color: #0779e4;
+  background: linear-gradient(to top, #dfe9f3 0%, white 50%);
+}
+input {
+  text-align: center;
+  background-image: linear-gradient(to top, #dfe9f3 0%, white 50%);
+  padding: 6px 12px;
+}
