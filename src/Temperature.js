@@ -1,13 +1,18 @@
 import React from "react";
 import Description from "./Description";
 import "./Temperature.css";
-
+import ReactAnimatedWeather from "react-animated-weather";
 export default function Temperature(props) {
   return (
     <div className="Temperature">
       <div className="row">
         <div className="col-2">
-          <img src="#" id="description-icon" alt="Temp-icon" />{" "}
+          <ReactAnimatedWeather
+        icon="CLOUDY"
+        color="orange"
+        size={50}
+        animate={false}
+      />
         </div>
         <div className="col-5">
           <span className="now-temp"> 14 </span>
