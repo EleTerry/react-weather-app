@@ -50,9 +50,11 @@ const apiKey ="00f59b8f2bccd0db3d87558a2dc2abfa";
           </span>
         </div>
         <div className="col-5">
-          <h3 className="city">{city}</h3>
-          <ul>
-            <li>
+           <ul>
+             <li className="city">
+          <h3 >{city}</h3>
+         </li>
+            <li clssName="description">
               <span className="text-capitalize">{weather.description}</span>
             </li>
           </ul>
