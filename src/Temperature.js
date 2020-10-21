@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
 import Forecast from "./Forecast";
+import TemperatureInfo from "./Temperatureinfo";
 import "./Temperature.css";
 
 
@@ -8,14 +9,15 @@ export default function Temperature(props) {
   const[city, setCity] = useState(props.defaultCity);
   const[weather, setWeather] = useState({load:false});
  
-  function showWeather(response){
+  function displayWeather(response){
 setWeather({
   load: true,
+  city: response.data.name,
   temperature: Math.round(response.data.main.temp),
       humidity: response.data.main.humidity,
       wind: Math.round(response.data.wind.speed),
       description: response.data.weather[0].description,
-      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+      icon: response.data.weather[0].icon,
     });
     
   }
@@ -32,44 +34,13 @@ setWeather({
   function search(){
 const apiKey ="00f59b8f2bccd0db3d87558a2dc2abfa";
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
- axios.get(url).then(showWeather);
+ axios.get(url).then(displayWeather);
   }
 
   if(weather.load) {
   return (
-    <div className="Temperature">
-      <div className="row">
-        <div className="col-2">
-          <img src={weather.icon} alt="Weather-icon" />
-        </div>
-        <div className="col-5">
-          <span className="updated-temperature">{weather.temperature}</span>
-          <span className="units">
-             °C |°F
-           
-          </span>
-        </div>
-        <div className="col-5">
-           <ul>
-             <li className="city">
-          <h3 >{city}</h3>
-         </li>
-            <li clssName="description">
-              <span className="text-capitalize">{weather.description}</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-       <div className="information-text">
-      <div className="row">
-        <div className="col-6">
-          Humidity: <span>{weather.humidity}</span>%
-        </div>
-        <div className="col-6">
-          Wind Speed: <span>{weather.wind}</span>km/h
-        </div>
-      </div>
-    </div>
+   <div>
+    <TemperatureInfo data={weather} />
       <Forecast />
         <form className="form-search" onSubmit={handleSubmit}>
       <div className="row">
