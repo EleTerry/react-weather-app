@@ -1,3 +1,7 @@
 .Forecast {
   margin: 20px;
 }
+.Forecast canvas {
+  display: block;
+  size: 20px;
+}

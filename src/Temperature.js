@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
-import Forecast from "./Forecast";
 import TemperatureInfo from "./Temperatureinfo";
+import Forecast from "./Forecast";
 import "./Temperature.css";
 
 
@@ -41,10 +41,10 @@ const apiKey ="00f59b8f2bccd0db3d87558a2dc2abfa";
   return (
    <div>
     <TemperatureInfo data={weather} />
-      <Forecast />
+      <Forecast city={weather.city} />
         <form className="form-search" onSubmit={handleSubmit}>
       <div className="row">
-        <div className="col-6">
+        <div className="col-9">
           <input
             type="text"
             className="form-control"
@@ -53,20 +53,13 @@ const apiKey ="00f59b8f2bccd0db3d87558a2dc2abfa";
             onChange={updateCity}
           />
         </div>
-        <div className="col-2">
+        <div className="col-3">
           <button type="submit" className="rounded-sm" >
             {" "}
             Search
           </button>
         </div>
-        <div className="col-4">
-          <button className="geolocation">Current Location</button>
-        </div>
       </div>
-      <br />
-      <span className="geolocation-text">
-        <h6> Your current location is </h6>
-      </span>
     </form>
     </div>
   );
