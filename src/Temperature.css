@@ -31,9 +31,10 @@ input {
   background-image: linear-gradient(to top, #dfe9f3 0%, white 50%);
   padding: 6px 12px;
 }
-.canvas-main-icon {
+.TemperatureInfo canvas {
   margin: 15px;
   margin-left: 40px;
+  width: 70px;
 }
 .updated-temperature {
   font-size: 65px;

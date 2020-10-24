@@ -28,7 +28,7 @@ setLoad(true);
   );
   } else {
     const apiKey="00f59b8f2bccd0db3d87558a2dc2abfa";
- let apiUrl=`https://api.openweathermap.org/data/2.5/forecast?q=${props.city}&appid${apiKey}=&units=metric`;
+ let apiUrl=`https://api.openweathermap.org/data/2.5/forecast?q=${props.city}&appid=${apiKey}&units=metric`;
  axios.get(apiUrl).then(showForecast);
 
  return null;

@@ -1,7 +1,9 @@
 .Forecast {
   margin: 20px;
 }
-.Forecast canvas {
+.ForecastInfo {
+  text-align: center;
+}
+.ForecastInfo canvas {
   display: block;
-  size: 20px;
 }
