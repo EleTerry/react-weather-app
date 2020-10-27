@@ -16,8 +16,9 @@ return (
              <li className="city">
           <h3 >{props.data.city}</h3>
          </li>
-            <li clssName="description">
-              <span className="text-capitalize">{props.data.description}</span>
+            <li className="description">
+              <span className="text-capitalize">
+            {props.data.description} </span>
             </li>
           </ul>
         </div>

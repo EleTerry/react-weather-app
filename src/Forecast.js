@@ -5,15 +5,16 @@ import "./Forecast.css";
 import ForecastInfo from "./ForecastInfo";
 
 export default function Forecast(props) {
-  const[load, setLoad] = useState(false);
+  const[loaded, setLoaded] = useState(false);
 const[forecast, setForecast] = useState(null);
 
   function showForecast(response){
    setForecast(response.data); 
-setLoad(true);
+setLoaded(true);
+
 }
 
-  if (load && props.city === forecast.city.name) {
+  if (loaded && props.city === forecast.city.name) {
     return (
     <div className="Forecast">
       <div className="row">
@@ -23,6 +24,7 @@ setLoad(true);
       <ForecastInfo data={forecast.list[3]} />
        <ForecastInfo data={forecast.list[4]} />
         <ForecastInfo data={forecast.list[5]} />
+       
           </div>
         </div>
   );
